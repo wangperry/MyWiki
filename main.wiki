@@ -1,0 +1,150 @@
+= Study Notes and experience =
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== Windows ==
+=== VC ===
+*   [[Query Register and Convert 64 int to String]]
+*   [[file operation in kernal mode]]
+*   [[http://msdn.microsoft.com/en-us/library/aa363765(v=vs.85).aspx|file operation in user mode]]
+*   VS2012 Config
+    *   Turn off Unicode in VC++ Project
+        *   Project Properties -> General -> Project Defaults -> *Character Set*
+    *   .sdf and ipch
+        *   Visual Studio用来保存预编译的头文件和Intellisense用的
+        *   不在当前工程中生成这些文件, VS用临时文件夹保存这些文件
+        {{{
+        Tools->Options  Text Editor -> C/C++ -> Advanced
+        Fallback Location:  Always use Fallback Location -> Set True
+                            Do Not Warn if Fallback Location Used  -> Set True
+        }}}
+*   [[https://github.com/jaredpar/VsVim|VsVim]] vim extension in VS2012
+    *   Tools -> Extensions and Updates -> Search VsVim and Install -> Restart VS2012
+    *   Config Key mappings
+    *   :set vimrc          -> Show the vimrc which VsVim read
+
+=== System ===
+*   删除系统服务项
+    *   每一个Driver都对应一个Windows Service，该Service在Task Manager的Services List不可见，可以用工具[[http://tools.sysprogs.org/srvman/|srvman]]来查看
+    *   也可以用cmd-> sc query RtkBtfilter来查看该服务的状态
+    *   如果BT先安装公版device filter，卸载后，再安装Toshiba device filter，会提供service name or display name already exist
+    *   原因就是这两个Filter使用的相同的的Service Name&Display Name，即使卸载Driver，该服务RtkBtfilter仍然在Services list里，状态为Stop
+    *   只有将其从Service list删除才可以重装另一个Driver，因为Service Name&Display Name必须唯一!!!
+
+=== Bat ===
+*   [[http://blog.csdn.net/davidhsing/article/details/1996180|for /f]]
+{{{
+for /f %%i in (a.txt) do echo %%i       //这个会显示a.txt里面的内容，因为/f的作用，会读出a.txt中 的内容。
+for %%i in (a.txt) do echo %%i          //而这个只会显示a.txt这个名字，并不会读取其中的内容。
+for /f "tokens=2 delims= " %%i in (a.txt) do echo %%i   //以空格分割每一行，并显示第二列
+for /f "tokens=* delims= " %%i in (a.txt) do echo %%i   //以空格分割每一行，并显示整行
+for /f "skip=2 tokens=*" %%i in (a.txt) do echo %%i     //忽略文件头两行，显示每一行
+for /f "eol=. tokens=*" %%i in (a.txt) do echo %%i      //eol用来告诉for忽略以.开始的行
+}}}
+*   call other.bat para1 para2 ...
+*   setlocal enabledelayedexpansion     -->  延时变量绑定
+=== VS2012 静态编译c c++运行库 ==
+*   Win8上编译的程序在Win7上有可能不能运行，原因是它们使用的C运行库不一样，好的解决方法是在编译时将运行库编译进程序，随程序一起发布
+*   在VS2012中修改设置：Project Property->Configuration Properties->C/C++->Code Generation->Runtime Library->修改选项为"Mutiple-threaded(/MT)"
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== Python ==
+*   *Linux System Mining with Python* [[http://amitsaha.github.io/site/notes/articles/python_linux/article.html|English]] [[http://www.linuxeden.com/html/news/20130802/141990.html|Chinese]]
+*   [[Library]]
+*   [[数据类型]]
+*   [[Parse cmd line argument]]
+*   [[Deal with text file]]
+*   [[遍历文件夹下的文件]]
+*   [[Py2exe]]
+*   [[http://www.lfd.uci.edu/~gohlke/pythonlibs/|Unofficial Windows Binaries for Python Extension Packages]]
+*   [[http://stackoverflow.com/questions/3220404/why-use-pip-over-easy-install|easy_install & pip]]
+*   [[Iterator and Generator]] [[http://www.dabeaz.com/generators-uk/|Generator Tricks]] [[file://F:/Wiki/wiki2_html/GeneratorsUK.pdf|Generator!!!]]
+*   [[Decorator]]
+*   [[Closure]]
+*   [[MT]]
+*   [[Python Library]]
+*   [[Python Tricky]]
+
+=== Python Documents ===
+*   [[http://woodpecker.org.cn/diveintopython3/special-method-names.html|特殊方法 深入Python3]] [[http://www.cnblogs.com/vamei/archive/2012/11/19/2772441.html|Examples]]
+*   [[http://effbot.org/zone/python-for-statement.htm|For Statement]]
+    *  original     __getitem___  
+    *  new          ___iter___ and ___next___
+*   [[http://effbot.org/zone/python-with-statement.htm|With Statement]]
+    *   ___enter___ and ___exit___ 
+*   [[http://effbot.org/zone/python-getattr.htm|getattr Function]]
+    *   ___getattr___ 
+
+=== Python Books ===
+*   [[Core Python Programming]]
+
+=== Tools make live easier ===
+*   [[WppFormat]]
+*   [[SymStore]]
+*   [[LogChange]]   
+*   [[GetFileVersion]]
+*   [[WppLogConvert]]    
+*   [[DelCorruptSymFle]]
+
+=== Example package ===
+*   https://pypi.python.org/pypi/
+
+=== Other ===
+*   [[http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside|Python Library Installer for Windows]]
+ 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== Bluetooth ==
+*   [[Handy Note]]
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== USB ==
+*   [[http://blogs.msdn.com/b/usbcoreblog/archive/2011/05/11/demystifying-usb-selective-suspend.aspx|Demystifying USB Selective Suspend]]
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== WinDbg ==
+*   [[Debug Settings and Useful commands]]
+*   [[BSOD 0x9F]]
+*   [[IRP]]
+*   [[Dead Lock]]
+*   [[http://blogs.msdn.com/b/ntdebugging/archive/2011/10/26/debugging-a-clock-watchdog-timeout-bugcheck.aspx|Debugging a CLOCK_WATCHDOG_TIMEOUT Bugcheck]]
+*   [[Thread Waiting time]]
+*   [[Resource Leak]]
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== Linux ==
+*   [[http://www.linuxeden.com/html/news/20130927/144033.html|find]]
+*   
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== VIM ==
+*   [[VIMRC]]
+*   [[VIM Trick]] 
+*   [[Plugins]]
+*   [[Writing VIM Plugins]]
+*   Docs
+    *   [[http://blog.sanctum.geek.nz/buffers-windows-tabs/|Buffer Window Tab]]
+    *   [[file:///F:/Wiki/wiki2_html/Vimwiki1.1.1QR.pdf|VimWiki help]]
+    *   [[http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)|Key map]]
+*   TODO:
+    *   INF Syntax
+*   在Source Insight中使用VIM编缉文件
+    {{{
+    1.Source Insight中,Options->Custom Commands...->Add...,New Command name 随便 写,如"Edit with Vim"
+    2.Run中写入: "C:\Program Files\Vim\vim63\gvim.exe" --remote-silent +%l %f
+        意思是在当前已经打开的gvim窗口里面打开当前的文件,并且跳转到指定行 %l为当前的行号,%f为文件名
+        使用 --remote-silent 的作用是,如果已经打开了对应文件,就不会打开第二次,而是在 已经打开的文件里跳转到对应行
+    3.还是同一个对话框里面,选择Keys->Assign New Key...->按F2,如果你已经将F2设置 给其他命令,选择其他的按键就行了
+    4.设置完毕
+    }}}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== Work Note ==
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== As a programmer ==
+*   [[http://www.linuxeden.com/html/news/20130819/142662.html|程序员的困境]]
+*   [[https://github.com/trending?l=python|Project Trending]]
+*   [[http://www.linuxeden.com/html/news/20130810/142319.html|码农英语]]
+*   [[REST]]
+*   Interesting WebSet
+    *   [[http://www.pythonchallenge.com/|Learn Python]]
+    *   [[http://projecteuler.net/|Solve Problem in least code]]
+    *   [[http://www.topcoder.com/]]
