@@ -96,6 +96,11 @@ for /f "eol=. tokens=*" %%i in (a.txt) do echo %%i      //eol”√¿¥∏ÊÀﬂfor∫ˆ¬‘“‘.ø
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 == USB ==
+*   CATC
+    *   SOF(Start of frame), √ø“ª∏ˆFrame÷∏µƒ «∂ŒπÃ∂®µƒ ±º‰º‰∏Ù£¨‘⁄∏√º‰∏Ùƒ⁄£¨Controlœ»∑¢£¨»ª∫ÛSync£¨◊Ó∫Û≤≈ «Bulk
+    *   SOF «√ø∏ˆFrameµƒø™ º“≤ «…œ“ª∏ˆFrameµƒΩ· ¯£¨ø…“‘Hide SOF
+    *   XFR£¨ø…“‘Ω´œ‘ æµƒTransferº∂µƒ£¨ø…Ω´USBµƒ√¸¡ÓΩ‚Œˆ≥ˆ¿¥
+    *   ‘⁄¥Úø™LeCroy USB Protocol Suite∫Û£¨“™…Ë÷√Setup->Recording Options->—°‘ÒManual Trigger£¨ BufferSize…ËŒ™◊Ó¥Û
 *   [[http://blogs.msdn.com/b/usbcoreblog/archive/2011/05/11/demystifying-usb-selective-suspend.aspx|Demystifying USB Selective Suspend]]
 
 
@@ -112,7 +117,7 @@ for /f "eol=. tokens=*" %%i in (a.txt) do echo %%i      //eol”√¿¥∏ÊÀﬂfor∫ˆ¬‘“‘.ø
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 == Linux ==
 *   [[http://www.linuxeden.com/html/news/20130927/144033.html|find]]
-*   
+   
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 == VIM ==
 *   [[VIMRC]]
