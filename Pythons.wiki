@@ -1,0 +1,69 @@
+= Pythons =
+== Python ==
+*   Author: *Guido van Rossum*      1991
+*   编程范型： 命令式编程、多范型、面向对象、函数式编程、面向切面编程
+*   型态系统： [[强类型]]、[[动态类型]]、[[duck typing]]
+*   [[Basic]]
+*   [[Python Library]]
+*   [[Python Coding Style]]
+*   [[http://www.cnblogs.com/moinmoin/archive/2011/03/10/lsit-comprehensions-generators.html|python列表解析和生成表达式]]
+*   [[Iterator and Generator]] [[http://www.dabeaz.com/generators-uk/|Generator Tricks]] [[file://F:/Wiki/wiki2_html/GeneratorsUK.pdf|Generator!!!]]
+*   *Linux System Mining with Python* [[http://amitsaha.github.io/site/notes/articles/python_linux/article.html|English]] [[http://www.linuxeden.com/html/news/20130802/141990.html|Chinese]]
+*   [[Parse cmd line argument]]
+*   [[遍历文件夹下的文件]]
+*   [[Decorator]]
+*   [[Closure]]
+*   [[Python Tricky]]
+*   [[Python Challenge]]
+
+== Tools ==
+*   Show image in terminal when call Image.show() within PIL
+    *   sudo apt-get install imagemagick
+*   [[Py2exe]]
+*   [[http://stackoverflow.com/questions/3220404/why-use-pip-over-easy-install|easy_install & pip]]
+*   [[https://github.com/philipbjorge/EditREPL|EditREPL use vim in python interacive shell]]
+*   [[PythonVirtualEnviroment]]
+*   [[http://www.ibm.com/developerworks/cn/linux/l-cn-pythondebugger/|Debug]]
+*   [[http://www.lfd.uci.edu/~gohlke/pythonlibs/|Unofficial Windows Binaries for Python Extension Packages]]
+*   [[Distribute and Install package]]
+*   [[http://www.pythonforbeginners.com/basics/ipython-a-short-introduction/|IPython]] ===
+    *   Tab completion              " very useful
+    *   Using Python debugger
+    *   Profiles
+    *   QT-based
+*   [[http://yangzetian.github.io/2013/02/08/ipython-notebook-interactive-computing-new-era/|IPython-notebook]]
+{{{
+IPython Notebook 是一种新兴的交互式数据分析与记录工具，它定义了一种全新的计算文件格式，其中包含了代码，
+代码说明以及每一步的计算输出(数值或图片等)，也就是说这一个文件完整记录了计算过程中的所有相关信息。此外，
+该文件还可以嵌入网络视频，图片， 公式等众多副文本格式，实为交互计算，记录思维，传播思想的好帮手。
+}}}
+    *   > sudo ipython notebook
+    *   > sudo ipython notebook --pylab
+    *   > sudo ipython notebook --pylab inline
+    *   As ipython notebook kernel must run as root while chrome can't run as root
+        *   modify /usr/bin/google-chrome, add *--user-data-dir* in the end of last line
+
+== Books & Docs ==
+*   [[Python Cook Book]]
+*   [[http://www.tummy.com/presentations/vimpython-20070225/|python&vim]]
+*   [[Python Core Programming]]
+*   [[http://woodpecker.org.cn/diveintopython3/special-method-names.html|特殊方法 深入Python3]] [[http://www.cnblogs.com/vamei/archive/2012/11/19/2772441.html|Examples]]
+*   [[http://effbot.org/zone/python-for-statement.htm|For Statement]]
+    *  original     __getitem___  
+    *  new          ___iter___ and ___next___
+*   [[http://effbot.org/zone/python-with-statement.htm|With Statement]]
+    *   ___enter___ and ___exit___ 
+*   [[http://effbot.org/zone/python-getattr.htm|getattr Function]]
+    *   ___getattr___ 
+
+=== Tools make live easier ===
+*   [[WppFormat]]
+*   [[SymStore]]
+*   [[LogChange]]   
+*   [[GetFileVersion]]
+*   [[WppLogConvert]]    
+*   [[DelCorruptSymFle]]
+
+== Python3 ==
+*   sudo apt-get install python3
+*   sudo apt-get install python3-setuptools

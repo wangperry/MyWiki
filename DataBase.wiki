@@ -1,0 +1,51 @@
+= SQL =
+All SQL operations are then one of four general things(*CRUD*) you do to tables:
+Create::
+    Putting data into tables.
+Read::
+    Query data out of a table.
+Update::
+    Change data already in a table.
+Delete::
+    Remove data from the table.
+
+
+== [[SQLite]] ==
+SQLite is an embedded database. Rather than running independently as a 
+<br>stand-alone process, it symbiotically coexists inside the application
+<br>it serves-within its process space.
+
+{{{
+Whereas large-scale dedicated relational databases are designed for thousands of users, SQLite is
+designed for thousands of uses. It is more than a database. Although a tool in its own right, it is a tool for
+making tools as well. It is a true utility, engineered to enable you—the developer, user, or
+administrator—to quickly and easily shape those disparate piles of data into order, and manipulate
+them to your liking with minimal effort.
+}}}
+---------------------------------------------------------------------------
+= NoSQL =
+Most of the nosql databases have python clients which are actively supported. 
+<br>To name a few:
+<br>Cassandra: https://github.com/datastax/python-driver
+<br>Riak: https://github.com/basho/riak-python-client
+<br>MongoDB: http://api.mongodb.org/python/current/
+<br>CouchDB: http://wiki.apache.org/couchdb/Getting_started_with_Python
+<br>Redis: https://github.com/andymccurdy/redis-py
+
+== [[http://couchdb.apache.org/|CouchDB(Erlang)]] == 
+
+== [[http://www.mongodb.org/|MongoDB(C++)]] ==
+*   Install:    >sudo apt-get install mongodb
+    *   mongod daemon will start automatically on Ubuntu, port 27017
+    *   >mongo      start MongoDB admin console
+    *   >source ~/workspace/env_test/bin/activate   Test in Python virsual enviroment
+    *   pip install pymongo 
+    *   Comparison
+    *   SQL: row  <-- a single entry --> MongoDB: document
+    *   SQL: table  <-- entries --> MongoDB: collection
+
+== [[http://redis.io/|Redis]]
+
+== [[http://labs.codernity.com/codernitydb/index.html|CodernityDB(Python)]] ==
+*   [[CodernityDB Code Analyze]]
+

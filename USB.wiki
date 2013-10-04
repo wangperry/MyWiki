@@ -1,0 +1,7 @@
+== USB ==
+*   CATC
+    *   SOF(Start of frame), 每一个Frame指的是段固定的时间间隔，在该间隔内，Control先发，然后Sync，最后才是Bulk
+    *   SOF是每个Frame的开始也是上一个Frame的结束，可以Hide SOF
+    *   XFR，可以将显示的Transfer级的，可将USB的命令解析出来
+    *   在打开LeCroy USB Protocol Suite后，要设置Setup->Recording Options->选择Manual Trigger， BufferSize设为最大
+*   [[http://blogs.msdn.com/b/usbcoreblog/archive/2011/05/11/demystifying-usb-selective-suspend.aspx|Demystifying USB Selective Suspend]]

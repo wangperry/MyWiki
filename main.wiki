@@ -1,150 +1,24 @@
-= Study Notes and experience =
--------------------------------------------------------------------------------------------------------------------------------------------------------
-== Windows ==
-=== VC ===
-*   [[Query Register and Convert 64 int to String]]
-*   [[file operation in kernal mode]]
-*   [[http://msdn.microsoft.com/en-us/library/aa363765(v=vs.85).aspx|file operation in user mode]]
-*   VS2012 Config
-    *   Turn off Unicode in VC++ Project
-        *   Project Properties -> General -> Project Defaults -> *Character Set*
-    *   .sdf and ipch
-        *   Visual StudioÓÃÀ´±£´æÔ¤±àÒëµÄÍ·ÎÄ¼şºÍIntellisenseÓÃµÄ
-        *   ²»ÔÚµ±Ç°¹¤³ÌÖĞÉú³ÉÕâĞ©ÎÄ¼ş, VSÓÃÁÙÊ±ÎÄ¼ş¼Ğ±£´æÕâĞ©ÎÄ¼ş
-        {{{
-        Tools->Options  Text Editor -> C/C++ -> Advanced
-        Fallback Location:  Always use Fallback Location -> Set True
-                            Do Not Warn if Fallback Location Used  -> Set True
-        }}}
-*   [[https://github.com/jaredpar/VsVim|VsVim]] vim extension in VS2012
-    *   Tools -> Extensions and Updates -> Search VsVim and Install -> Restart VS2012
-    *   Config Key mappings
-    *   :set vimrc          -> Show the vimrc which VsVim read
+= Rick's Wiki =
+== å‹¤å‹¤æ³æ³ï¼Œç‚¹ç‚¹æ»´æ»?   ...... ==
 
-=== System ===
-*   É¾³ıÏµÍ³·şÎñÏî
-    *   Ã¿Ò»¸öDriver¶¼¶ÔÓ¦Ò»¸öWindows Service£¬¸ÃServiceÔÚTask ManagerµÄServices List²»¿É¼û£¬¿ÉÒÔÓÃ¹¤¾ß[[http://tools.sysprogs.org/srvman/|srvman]]À´²é¿´
-    *   Ò²¿ÉÒÔÓÃcmd-> sc query RtkBtfilterÀ´²é¿´¸Ã·şÎñµÄ×´Ì¬
-    *   Èç¹ûBTÏÈ°²×°¹«°ædevice filter£¬Ğ¶ÔØºó£¬ÔÙ°²×°Toshiba device filter£¬»áÌá¹©service name or display name already exist
-    *   Ô­Òò¾ÍÊÇÕâÁ½¸öFilterÊ¹ÓÃµÄÏàÍ¬µÄµÄService Name&Display Name£¬¼´Ê¹Ğ¶ÔØDriver£¬¸Ã·şÎñRtkBtfilterÈÔÈ»ÔÚServices listÀï£¬×´Ì¬ÎªStop
-    *   Ö»ÓĞ½«Æä´ÓService listÉ¾³ı²Å¿ÉÒÔÖØ×°ÁíÒ»¸öDriver£¬ÒòÎªService Name&Display Name±ØĞëÎ¨Ò»!!!
+=== WHO AM I ===
+    My name is Rick, I am a programmer. I like opensource
+    <br> 
+    very much. This is my personal wiki web site. Write my
+    <br>
+    diary and study note here
+    
+=== Learning road ===
+*   [[Windows]]
+*   [[Linux]]
+*   [[Programming]]
+*   [[DataBase]]
+*   [[Editor]]
+*   [[Bluetooth]] [[USB]]
+*   [[git  github]]
+*   [[OpenStack]] [[http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html|SSH]]
 
-=== Bat ===
-*   [[http://blog.csdn.net/davidhsing/article/details/1996180|for /f]]
-{{{
-for /f %%i in (a.txt) do echo %%i       //Õâ¸ö»áÏÔÊ¾a.txtÀïÃæµÄÄÚÈİ£¬ÒòÎª/fµÄ×÷ÓÃ£¬»á¶Á³öa.txtÖĞ µÄÄÚÈİ¡£
-for %%i in (a.txt) do echo %%i          //¶øÕâ¸öÖ»»áÏÔÊ¾a.txtÕâ¸öÃû×Ö£¬²¢²»»á¶ÁÈ¡ÆäÖĞµÄÄÚÈİ¡£
-for /f "tokens=2 delims= " %%i in (a.txt) do echo %%i   //ÒÔ¿Õ¸ñ·Ö¸îÃ¿Ò»ĞĞ£¬²¢ÏÔÊ¾µÚ¶şÁĞ
-for /f "tokens=* delims= " %%i in (a.txt) do echo %%i   //ÒÔ¿Õ¸ñ·Ö¸îÃ¿Ò»ĞĞ£¬²¢ÏÔÊ¾ÕûĞĞ
-for /f "skip=2 tokens=*" %%i in (a.txt) do echo %%i     //ºöÂÔÎÄ¼şÍ·Á½ĞĞ£¬ÏÔÊ¾Ã¿Ò»ĞĞ
-for /f "eol=. tokens=*" %%i in (a.txt) do echo %%i      //eolÓÃÀ´¸æËßforºöÂÔÒÔ.¿ªÊ¼µÄĞĞ
-}}}
-*   call other.bat para1 para2 ...
-*   setlocal enabledelayedexpansion     -->  ÑÓÊ±±äÁ¿°ó¶¨
-=== VS2012 ¾²Ì¬±àÒëc c++ÔËĞĞ¿â ==
-*   Win8ÉÏ±àÒëµÄ³ÌĞòÔÚWin7ÉÏÓĞ¿ÉÄÜ²»ÄÜÔËĞĞ£¬Ô­ÒòÊÇËüÃÇÊ¹ÓÃµÄCÔËĞĞ¿â²»Ò»Ñù£¬ºÃµÄ½â¾ö·½·¨ÊÇÔÚ±àÒëÊ±½«ÔËĞĞ¿â±àÒë½ø³ÌĞò£¬Ëæ³ÌĞòÒ»Æğ·¢²¼
-*   ÔÚVS2012ÖĞĞŞ¸ÄÉèÖÃ£ºProject Property->Configuration Properties->C/C++->Code Generation->Runtime Library->ĞŞ¸ÄÑ¡ÏîÎª"Mutiple-threaded(/MT)"
-
--------------------------------------------------------------------------------------------------------------------------------------------------------
-== Python ==
-*   *Linux System Mining with Python* [[http://amitsaha.github.io/site/notes/articles/python_linux/article.html|English]] [[http://www.linuxeden.com/html/news/20130802/141990.html|Chinese]]
-*   [[Library]]
-*   [[Êı¾İÀàĞÍ]]
-*   [[Parse cmd line argument]]
-*   [[Deal with text file]]
-*   [[±éÀúÎÄ¼ş¼ĞÏÂµÄÎÄ¼ş]]
-*   [[Py2exe]]
-*   [[http://www.lfd.uci.edu/~gohlke/pythonlibs/|Unofficial Windows Binaries for Python Extension Packages]]
-*   [[http://stackoverflow.com/questions/3220404/why-use-pip-over-easy-install|easy_install & pip]]
-*   [[Iterator and Generator]] [[http://www.dabeaz.com/generators-uk/|Generator Tricks]] [[file://F:/Wiki/wiki2_html/GeneratorsUK.pdf|Generator!!!]]
-*   [[Decorator]]
-*   [[Closure]]
-*   [[MT]]
-*   [[Python Library]]
-*   [[Python Tricky]]
-
-=== Python Documents ===
-*   [[http://woodpecker.org.cn/diveintopython3/special-method-names.html|ÌØÊâ·½·¨ ÉîÈëPython3]] [[http://www.cnblogs.com/vamei/archive/2012/11/19/2772441.html|Examples]]
-*   [[http://effbot.org/zone/python-for-statement.htm|For Statement]]
-    *  original     __getitem___  
-    *  new          ___iter___ and ___next___
-*   [[http://effbot.org/zone/python-with-statement.htm|With Statement]]
-    *   ___enter___ and ___exit___ 
-*   [[http://effbot.org/zone/python-getattr.htm|getattr Function]]
-    *   ___getattr___ 
-
-=== Python Books ===
-*   [[Core Python Programming]]
-
-=== Tools make live easier ===
-*   [[WppFormat]]
-*   [[SymStore]]
-*   [[LogChange]]   
-*   [[GetFileVersion]]
-*   [[WppLogConvert]]    
-*   [[DelCorruptSymFle]]
-
-=== Example package ===
-*   https://pypi.python.org/pypi/
-
-=== Other ===
-*   [[http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyside|Python Library Installer for Windows]]
- 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-== Bluetooth ==
-*   [[Handy Note]]
-
--------------------------------------------------------------------------------------------------------------------------------------------------------
-== USB ==
-*   CATC
-    *   SOF(Start of frame), Ã¿Ò»¸öFrameÖ¸µÄÊÇ¶Î¹Ì¶¨µÄÊ±¼ä¼ä¸ô£¬ÔÚ¸Ã¼ä¸ôÄÚ£¬ControlÏÈ·¢£¬È»ºóSync£¬×îºó²ÅÊÇBulk
-    *   SOFÊÇÃ¿¸öFrameµÄ¿ªÊ¼Ò²ÊÇÉÏÒ»¸öFrameµÄ½áÊø£¬¿ÉÒÔHide SOF
-    *   XFR£¬¿ÉÒÔ½«ÏÔÊ¾µÄTransfer¼¶µÄ£¬¿É½«USBµÄÃüÁî½âÎö³öÀ´
-    *   ÔÚ´ò¿ªLeCroy USB Protocol Suiteºó£¬ÒªÉèÖÃSetup->Recording Options->Ñ¡ÔñManual Trigger£¬ BufferSizeÉèÎª×î´ó
-*   [[http://blogs.msdn.com/b/usbcoreblog/archive/2011/05/11/demystifying-usb-selective-suspend.aspx|Demystifying USB Selective Suspend]]
-
-
--------------------------------------------------------------------------------------------------------------------------------------------------------
-== WinDbg ==
-*   [[Debug Settings and Useful commands]]
-*   [[BSOD 0x9F]]
-*   [[IRP]]
-*   [[Dead Lock]]
-*   [[http://blogs.msdn.com/b/ntdebugging/archive/2011/10/26/debugging-a-clock-watchdog-timeout-bugcheck.aspx|Debugging a CLOCK_WATCHDOG_TIMEOUT Bugcheck]]
-*   [[Thread Waiting time]]
-*   [[Resource Leak]]
-
--------------------------------------------------------------------------------------------------------------------------------------------------------
-== Linux ==
-*   [[http://www.linuxeden.com/html/news/20130927/144033.html|find]]
-   
--------------------------------------------------------------------------------------------------------------------------------------------------------
-== VIM ==
-*   [[VIMRC]]
-*   [[VIM Trick]] 
-*   [[Plugins]]
-*   [[Writing VIM Plugins]]
-*   Docs
-    *   [[http://blog.sanctum.geek.nz/buffers-windows-tabs/|Buffer Window Tab]]
-    *   [[file:///F:/Wiki/wiki2_html/Vimwiki1.1.1QR.pdf|VimWiki help]]
-    *   [[http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)|Key map]]
-*   TODO:
-    *   INF Syntax
-*   ÔÚSource InsightÖĞÊ¹ÓÃVIM±à¼©ÎÄ¼ş
-    {{{
-    1.Source InsightÖĞ,Options->Custom Commands...->Add...,New Command name Ëæ±ã Ğ´,Èç"Edit with Vim"
-    2.RunÖĞĞ´Èë: "C:\Program Files\Vim\vim63\gvim.exe" --remote-silent +%l %f
-        ÒâË¼ÊÇÔÚµ±Ç°ÒÑ¾­´ò¿ªµÄgvim´°¿ÚÀïÃæ´ò¿ªµ±Ç°µÄÎÄ¼ş,²¢ÇÒÌø×ªµ½Ö¸¶¨ĞĞ %lÎªµ±Ç°µÄĞĞºÅ,%fÎªÎÄ¼şÃû
-        Ê¹ÓÃ --remote-silent µÄ×÷ÓÃÊÇ,Èç¹ûÒÑ¾­´ò¿ªÁË¶ÔÓ¦ÎÄ¼ş,¾Í²»»á´ò¿ªµÚ¶ş´Î,¶øÊÇÔÚ ÒÑ¾­´ò¿ªµÄÎÄ¼şÀïÌø×ªµ½¶ÔÓ¦ĞĞ
-    3.»¹ÊÇÍ¬Ò»¸ö¶Ô»°¿òÀïÃæ,Ñ¡ÔñKeys->Assign New Key...->°´F2,Èç¹ûÄãÒÑ¾­½«F2ÉèÖÃ ¸øÆäËûÃüÁî,Ñ¡ÔñÆäËûµÄ°´¼ü¾ÍĞĞÁË
-    4.ÉèÖÃÍê±Ï
-    }}}
-
--------------------------------------------------------------------------------------------------------------------------------------------------------
-== Work Note ==
-
--------------------------------------------------------------------------------------------------------------------------------------------------------
-== As a programmer ==
+=== As a programmer ===
 *   [[http://www.linuxeden.com/html/news/20130819/142662.html|³ÌĞòÔ±µÄÀ§¾³]]
 *   [[https://github.com/trending?l=python|Project Trending]]
 *   [[http://www.linuxeden.com/html/news/20130810/142319.html|ÂëÅ©Ó¢Óï]]
@@ -153,3 +27,6 @@ for /f "eol=. tokens=*" %%i in (a.txt) do echo %%i      //eolÓÃÀ´¸æËßforºöÂÔÒÔ.¿
     *   [[http://www.pythonchallenge.com/|Learn Python]]
     *   [[http://projecteuler.net/|Solve Problem in least code]]
     *   [[http://www.topcoder.com/]]
+     
+=== Live ===
+==== [[Driver's Lisence]] ===

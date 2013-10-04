@@ -1,0 +1,48 @@
+= git =
+== Install or Update ==
+*Install*::
+sudo apt-get install git git-core
+
+*Update*::
+git clone git://git.kernel.org/pug/scm/git/git.git
+
+== Create a local repository ==
+# mkdir my_app
+# cd my_app
+# git init  // init current repository
+# git add . // add sources to repository in current dir
+# git commit -m "Add the original files"    // commit files to repo
+# git show  // show status
+# git log   // show all changes we've committed so far
+
+== Remote Repositories ==
+# Create a new empty GitHub repository
+# Put our local repo to the GitHub server, we'll need to add a remote repository<br>git remote add origin https://github.com/Ryan311/MyWiki.git
+# push our local changes to origin repo on Github<br>git push -u origin master   //-u tells Git to remember the para
+# Pulling Remotely  other people commit and we want to see the changes<br>git pull origin master
+# git push  // push everything to the remote repository
+
+== Differences ==
+# git diff HEAD
+# git diff --staged
+
+== Other ==
+# git reset octofamily/octodog.txt
+# git checkout -- octocat.txt
+# git brahch clean_up
+# git checkout clean_up
+# git rm '*.txt'    //removing all the things
+
+== Other Reference ==
+=== [[http://josephj.com/entry.php?id=308|more...]] ===
+=== [[http://marklodato.github.io/visual-git-guide/index-zh-cn.html#basic-usage|图解Git]] ===
+=== [[http://www.worldhello.net/gotgit/|Git权威指南]] ===
+=== [[http://www.worldhello.net/doc/|GotGitHub]] ===
+
+----------------------------------------------------------------------------------------------------------------------------------------
+= github =
+
+== [[https://help.github.com/articles/generating-ssh-keys|generate SSH key: no need type username and password everytime]] ==
+== [[https://help.github.com/articles/working-with-ssh-key-passphrases|SSH key passphrases???]] ==
+== [[http://pages.github.com/|github pages]] ==
+

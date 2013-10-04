@@ -1,0 +1,2 @@
+== Strongly typed ==
+*   Python is strongly typed because objects don't change type

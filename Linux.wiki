@@ -1,0 +1,106 @@
+= Linux OS =
+---------------------------------------------------------------------------
+== Linux Command ==
+*   ps -aux     list all user and system process(包括守护进程)
+*   pstree      查看进程与线程的树形结构
+*   ps -eLf     -L显示进程并显示线程ID和线程个数
+*   top -H      实时显示各个线程情况
+*   [[http://www.linuxeden.com/html/news/20130927/144033.html|find]]
+*   pbcopy/pbpaste(OS X command-line tool, work with standard input and clipboard)
+    *   sudo apt-get install xsel
+    *   modify .bashrc
+    {{{
+    #add this two lines
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+    
+    #example
+    $ cat test.txt | pbcopy
+    }}}
+---------------------------------------------------------------------------
+== Ubuntu ==
+=== Tricks ===
+*   显示或隐藏文件管理器侧边栏      F9 toggle
+*   ubuntu unity, 已挂载的磁盘不显示在左边侧栏（启动器）
+{{{
+Ubuntu 默认总会将挂载的磁盘(硬盘分区)在桌面建立一捷径，Unity 桌面，则除了桌面外，还会在左边侧栏(Launcher)中也建一个捷径。
+
+事实上，Launcher 上面已有了固定的软件、开启的软件的小图示，所以很容易就占着许多图示，因此不必要再让已挂载的磁盘的图示显示在Launcher 上。
+
+若想移除（不再显示）已挂载磁盘的图示：
+
+安装Compiz Config Settings Manager( ccsm)，打开终端(Ctrl - Alt - T)，贴上
+
+sudo apt-get install compizconfig-settings-manager
+
+安装后，打开终端，输入 ccsm
+
+点Desktop(桌面) → 点Ubuntu Unity plugin → 点上方的Experimental → 最下方Show Devices 选择Never → 上一步→ 关闭。
+}}}
+
+*   ubuntu-tweak0.8.5在清理时会把/etc/X11/X误删除掉，重启后黑屏或停留在logo或startx失败
+{{{
+解决方法是：   在grup界面按e编辑，在Linux一午上加text，进入文本模式启动，在终端输入以下内容，创建新的软链接
+sudo ln -s /usr/bin/Xorg /etc/X11/X
+重启即可
+将tweak换成0.8.3
+}}}
+
+*   自动挂载其它分区
+{{{
+修改/etc/fstab文件
+sudo gedit /etc/fstab
+每一行使用一个tab分成6列，分别为filesystem, mountpoint, type, options,dump, pass
+分别表示:原来在文件系统的位置，加载点位置，类型，参数等，可以使用man fstab来查看各个参数的定义
+将以下内容添加到/etc/fstab 文件尾部，保存，重启即可自动挂载其他分区了。
+
+#Entry for /dev/sda6 :
+UUID=0004FF2F00048EBB   /media/sda6 ntfs-3g defaults,locale=en_US.UTF-8 0   0
+#Entry for /dev/sda7 :
+UUID=00048FA50008DD3A   /media/sda7 ntfs-3g defaults,locale=en_US.UTF-8 0   0
+#Entry for /dev/sda8 :
+UUID=000F3D290008D7EE   /media/sda8 ntfs-3g defaults,locale=en_US.UTF-8 0   0
+
+也可以写成
+/dev/sda6 /media/sda6 ntfs-3g defaults,locale=en_US.UTF-8 0   0
+/dev/sda7 /media/sda7 ntfs-3g defaults,locale=en_US.UTF-8 0   0
+/dev/sda8 /media/sda8 ntfs-3g defaults,locale=en_US.UTF-8 0   0
+}}}
+*   Backup system
+    * [[back.sh]] 
+    * move back.sh to /home
+      <br> cd /home
+      <br> chmod +x back.sh
+      <br> ./back.s
+*   [[http://www.cnblogs.com/vimmer/articles/2645734.html|GoldenDict]]
+    *   sudo apt-get install goldendict
+    *   download dictionaries and unzip to a dir
+    *   open goldendict -> edit this group -> add online dict and local dict
+*   Ubuntu加速
+    *   Preload, 可以预先加载程序使用的库或二进制文件进内存，加快程序启动速度
+        *   sudo apt-get install preload
+    *   随机启动项
+        *   sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop     修改随机启动服务的文件属性，显示隐藏的随机启动系统服务
+        *   startup －> 修改
+*   Vim中文显示乱码
+    *   Windows上默认是GBK编码，而vim默认是utf-8（gedit默认也是utf-8)，所以在vim上打开windows上的文件中文会显示乱码，只需要修改配置文件，使vim支持gbk编码就可以了。
+    *   在vimrc中添加*set fileencoding=utf-8,gbk*
+*   [[VirsualBox]]
+---------------------------------------------------------------------------
+== Linux Should known ==
+http://coolshell.cn/articles/8883.html
+
+*   Bash
+*   vim
+*   ssh
+*   bash作业管理
+{{{
+    &, Ctrl-Z, Ctrl-C, jobs, fg, bg, kill, 等等。当然，你也要知道Ctrl+\（SIGQUIT）和Ctrl+C （SIGINT）的区别
+}}}
+*   简单文件管理
+{{{
+ls 和 ls -l (你最好知道 “ls -l” 的每一列的意思), less, head, tail 和 tail -f, ln 和 ln -s (你知道明白hard link和soft link的不同和优缺点), chown, chmod, du (如果你想看看磁盘的大小 du -sk *), df, mount。当然，原作者忘了find命令。
+}}}
+
+*   [[http://coolshell.cn/articles/9104.html|Sed]]
+*   [[http://coolshell.cn/articles/9070.html|Awk]]

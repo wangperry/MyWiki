@@ -1,0 +1,2 @@
+== Dynamically typed ==
+*   Python is dynamically typed because we pass around references and don't check the type until the last possible minute
