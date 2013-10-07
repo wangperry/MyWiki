@@ -41,8 +41,14 @@ git clone git://git.kernel.org/pug/scm/git/git.git
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 = github =
+== ssh连接github.com的SSH服务 ==
+*   $ssh-keygen ==> 在.ssh目录中创建默认的公钥／私钥对文件
+*   $ssh-keygen -C "persnail311@gmail.com" -f ~/.ssh/hr ==> 在目录hr下根据邮箱名创建公钥／私钥对文件，还要在.ssh/config文件中加入路径名
+*   将公钥Copy到GitHub中
+*   $ssh -T git@github.com ==> 登录
+*   $ssh -Tv git@github.com ==> 以诊断模式登录
 
-== [[https://help.github.com/articles/generating-ssh-keys|generate SSH key: no need type username and password everytime]] ==
+== [[https://help.github.com/articles/generating-ssh-keys|generate SSH key: noneed type username and password everytime]] ==
 == [[https://help.github.com/articles/working-with-ssh-key-passphrases|SSH key passphrases???]] ==
 == [[http://pages.github.com/|github pages]] ==
 

@@ -82,3 +82,7 @@
 
     set undofile
     }}}
+-------------------------------------------------------------------------------------------------------------------
+*   Wiki auto convert to HTML
+    *   Add autocmd to plugin/vimwiki.vim
+    <br>_autocmd! bufwritepost *.wiki Vimwiki2HTML_
