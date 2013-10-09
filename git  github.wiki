@@ -37,8 +37,7 @@ git clone git://git.kernel.org/pug/scm/git/git.git
 === [[http://josephj.com/entry.php?id=308|more...]] ===
 === [[http://marklodato.github.io/visual-git-guide/index-zh-cn.html#basic-usage|图解Git]] ===
 === [[http://www.worldhello.net/gotgit/|Git权威指南]] ===
-=== [[http://www.worldhello.net/doc/|GotGitHub]] ===
-
+== [[http://gitready.com/|git ready]] ==
 ----------------------------------------------------------------------------------------------------------------------------------------
 = github =
 == ssh连接github.com的SSH服务 ==
@@ -47,8 +46,18 @@ git clone git://git.kernel.org/pug/scm/git/git.git
 *   将公钥Copy到GitHub中
 *   $ssh -T git@github.com ==> 登录
 *   $ssh -Tv git@github.com ==> 以诊断模式登录
+== github快捷键 ==
+*   ?  显示当前可用快捷键
+*   t  在Code界面用于过滤文件
+*   w　Code界面弹出切换菜单
+== [[http://www.worldhello.net/gotgithub/03-project-hosting/050-homepage.html|主页]] ==
+*   GitHub为每一个用户分配一个二级域名<user-id>.github.com
+*   可以创建个人主页    http://ryan311.github.com
+*   可以创建项目主页
 
-== [[https://help.github.com/articles/generating-ssh-keys|generate SSH key: noneed type username and password everytime]] ==
-== [[https://help.github.com/articles/working-with-ssh-key-passphrases|SSH key passphrases???]] ==
-== [[http://pages.github.com/|github pages]] ==
+== GitHub Doc ==
+=== [[http://www.worldhello.net/doc/|GotGitHub]] ===
+=== [[https://help.github.com/articles/generating-ssh-keys|generate SSH key: noneed type username and password everytime]] ===
+=== [[https://help.github.com/articles/working-with-ssh-key-passphrases|SSH key passphrases???]] ===
+=== [[http://pages.github.com/|github pages]] ===
 

@@ -36,3 +36,11 @@
     *   bz2, gzip, tarfile
     *   click the bee and see the login window
     *   decompress the un and pwd
+*   level 9
+    *   PIL, pygame
+    *   use the two list to draw point
+    *   what animal is in the picture
+*   level 10
+    *   re
+    *   search the sequence in google, and understand what is the order
+    *   use 10-decimal

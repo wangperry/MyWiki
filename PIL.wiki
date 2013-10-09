@@ -1,9 +1,166 @@
-= PIL(Python Imaging Library) =
-*   Image����PIL����һ���ǳ���Ҫ����
+= [[http://effbot.org/imagingbook/pil-index.htm|PIL]] =
+== Concepts ==
+*   Bands
 {{{class = "brush: python"
->>> import Image
->>> im = Image.open("j.jpg")
->>> print im.format, im.size, im.mode
-JPEG (440, 330) RG
+An image can consist of one or more bands of data. The Python Imaging Library allows you to store several bands in a single image, provided they all have the same dimensions and depth.
+
+>>>im.getbands()
+('R', 'G', 'B', 'A')
 }}}
+*   Mode
+{{{
+The mode of an image defines the type and depth of a pixel in the image. The current release supports the following standard modes:
+
+1 (1-bit pixels, black and white, stored with one pixel per byte)
+L (8-bit pixels, black and white)
+P (8-bit pixels, mapped to any other mode using a colour palette)
+RGB (3x8-bit pixels, true colour)
+RGBA (4x8-bit pixels, true colour with transparency mask)
+CMYK (4x8-bit pixels, colour separation)
+YCbCr (3x8-bit pixels, colour video format)
+I (32-bit signed integer pixels)
+F (32-bit floating point pixels)
+}}}
+== Image Moudle ==
+=== Image Functions ===
+*   Image.new(mode, size[, color]) => create a new image with the given mode and size
+*   Image.open(file[, mode]) => the function only read the file header, but the actual image data is not read from the file until you try to porcess the data, mode if required must be "r"
+*   Image.blend(image1, image2, alpha)
+*   Image.composite(image1, image2, mask)
+*   Image.eval(image, function) => applies the function to each pixel in the given image
+*   Image.frombuffer(mode, size, data)
+*   Image.fromstring(mode, size, data)
+*   Image.merge(mode, bands)
+=== An instance of the Image class has following methods ===
+*   im.convert(mode)    => convert an image to another mode, return the new image
+*   im.getbands()
+*   im.getbbox()
+*   im.getcolors()
+*   im.getdata()    =>  return the contents of an image as a sequence object containing pixel values, convert it to list: list(im.getdata())
+*   im.getpixel(xy) =>  return the pixel at the giver position
+*   im.histogram()
+*   im.crop(box) => copy a subrectangle from an image
+*   im.paste(image, box) => pastes another image into this image
+*   im.paste(color, box)
+*   im.point(table)
+*   im.point(function)
+*   im.putdata(data[, scale, offset])
+*   im.putpalette(sequence)
+*   im.putpixel(xy, color)  => modifies the pixel at the given position
+*   im.resize(size)
+*   im.rotate(angle)
+*   im.save(outfile, options...)
+*   im.show()
+*   im.split()  => returns a tuple of individual image bands from an image
+*   im.thumbnail(size)
+*   im.tobitmap()   => returns the image converted to an X11 bitmap
+*   im.tostring() => returns a string containing pixel data
+*   im.verify() => determine if the file is broken
+=== Attributes of the instance of the Image class ===
+*   im.format
+*   im.mode
+*   im.size
+*   im.palette
+*   im.info
+=== Examples ===
+{{{class = "brush: python"
+# 
+>>>im = Image.open("bride.jpg") 
+>>>im.rotate(45).show() 
+    im = Image.open("oxygen.png")
+    (width, hight) = im.size
+    #print width, hight
+    for i in range(0, width,7):
+        (r,g,b,a) = im.getpixel((i, 43))
+        print r,
+        print chr(r)
+
+# create new image
+>>>im2 = Image.new("RGB", (512, 512), "white")
+>>>im2.save("my.jpg", "JPEG")
+>>>im2.show()       # show the image
+
+# create JPEG Thumbnails
+import os, sys
+import Image
+
+size = 128, 128
+for infile in sys.argv[1:]:
+    outfile = os.path.splitext(infile)[0] + ".thumbnail"
+    if infile != outfile:
+        try:
+            im = Image.open(infile)
+            im.thumbnail(size)
+            im.save(outfile, "JPEG")
+        except IOError:
+            print "cannot create thumbnail for", infile
+
+# copy a subrectange from an image
+box = (100, 100, 400, 400)
+region = im.crop(box)
+# process it and pasting it back
+region = region.transpose(Image.ROTATE_180)
+im.paste(region, box)
+
+# splitting and merging bands
+r, g, b = im.split()
+im = Image.merge("RGB", (b, g, r))
+
+# multiply each pixel by 1.2
+out = im.point(lambda i: i*1.2)
+}}}
+
+== ImageColor ==
+*   The ImageColor module contains colour tables and converters from CSS3-style colour specifiers to RGB tuples. 
+*   This module is used by Image.new and the ImageDraw module, among others.
+{{{
+1.  Hexadecimal color specifiers, given as “#rgb” or “#rrggbb”. For example, “#ff0000” specifies pure red.
+
+2.  RGB functions, given as “rgb(red, green, blue)” where the colour values are integers in the range 0 to 255. 
+Alternatively, the color values can be given as three percentages (0% to 100%). For example, “rgb(255,0,0)” and
+“rgb(100%,0%,0%)” both specify pure red.
+
+3.  Hue-Saturation-Lightness (HSL) functions, given as “hsl(hue, saturation%, lightness%)” where hue is the colour
+given as an angle between 0 and 360 (red=0, green=120, blue=240), saturation is a value between 0% and 100% 
+(gray=0%, full color=100%), and lightness is a value between 0% and 100% (black=0%, normal=50%, white=100%). 
+For example, “hsl(0,100%,50%)” is pure red.
+
+4.  Common HTML colour names. The ImageColor module provides some 140 standard colour names, based on the colors 
+supported by the X Window system and most web browsers. Colour names are case insensitive. For example, “red” and
+“Red” both specify pure red.
+}}}
+=== Function ===
+*   getrgb(color) ⇒ (red, green, blue)
+*   getcolor(color, mode) ⇒ (red, green, blue) or integer
+=== Attributes ===
+*   ImageColor.colormap => show {color: #rgb} dist
+
+== ImageDraw ==
+*   The ImageDraw module provide simple 2D graphics for Image objects. You can use this module to create new images, annotate or retouch existing images, and to generate graphics on the fly for web use.
+*   Image是一个画布，而ImageDraw是画笔，用于在画布上绘制图案
+=== Functions ===
+*   Draw(image) => Draw instance, image is the map
+=== Methods ===
+*   draw.acr(xy, start, end, options)
+*   draw.bitmap(xy, bitmap, options)
+*   draw.chord(xy, start, end, options)
+*   draw.ellipse(xy, options)
+*   draw.line(xy, options)
+*   draw.pieslice(xy, start, end, optinos)
+*   draw.points(xy, options)    => draw individual pixels
+*   draw.polygon(xy, options)
+*   draw.rectangle(box, options)
+*   draw.text(position, string, options)
+*   draw.textsize(string, options) => return (width, height), the size of the given string
+{{{class = "brush: python"
+import Image, ImageDraw
+im = Image.new("L", (500,500))  # make a map
+draw = ImageDraw.Draw(im)   # make a pen
+draw.line((0,0)+im.size, fill=128)
+draw.point([100,10,200,20], 255)
+del draw        # delete pen
+im.show()       # show the map
+}}}
+
+= [[http://pythonvision.org/basic-tutorial|Python Image process with Scipy]] =
 
