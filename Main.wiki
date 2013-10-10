@@ -17,7 +17,6 @@
 *   [[Bluetooth]] [[USB]]
 *   [[git  github]]
 *   [[OpenStack]] [[http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html|SSH]]
-*   [[Security]]
 
 === As a programmer ===
 *   [[http://www.linuxeden.com/html/news/20130819/142662.html|程序员的困境]]

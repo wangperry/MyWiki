@@ -1,2 +1,0 @@
-= Python Cryptography Toolkit (pycrypto) =
-== [[https://www.dlitz.net/software/pycrypto/doc/|Doc]] ==

@@ -17,7 +17,6 @@
     #example
     $ cat test.txt | pbcopy
     }}}
-*   openssl
 ---------------------------------------------------------------------------
 == Ubuntu ==
 === Tricks ===
@@ -90,7 +89,10 @@ UUID=000F3D290008D7EE   /media/sda8 ntfs-3g defaults,locale=en_US.UTF-8 0   0
 ---------------------------------------------------------------------------
 == Linux Should known ==
 http://coolshell.cn/articles/8883.html
-*   [[SSH]]
+
+*   Bash
+*   vim
+*   ssh
 *   bash作业管理
 {{{
     &, Ctrl-Z, Ctrl-C, jobs, fg, bg, kill, 等等。当然，你也要知道Ctrl+\（SIGQUIT）和Ctrl+C （SIGINT）的区别
