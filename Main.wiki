@@ -16,7 +16,7 @@
 *   [[Editor]]
 *   [[Bluetooth]] [[USB]]
 *   [[git  github]]
-*   [[OpenStack]] [[http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html|SSH]]
+*   [[Cloud Compute]]  [[OpenStack]]
 *   [[Security]]
 
 === As a programmer ===
