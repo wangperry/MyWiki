@@ -34,10 +34,10 @@ git clone git://git.kernel.org/pug/scm/git/git.git
 # git rm '*.txt'    //removing all the things
 
 == Other Reference ==
+=== [[http://rogerdudler.github.io/git-guide/index.zh.html|git简明教程]]
 === [[http://josephj.com/entry.php?id=308|more...]] ===
 === [[http://marklodato.github.io/visual-git-guide/index-zh-cn.html#basic-usage|图解Git]] ===
 === [[http://www.worldhello.net/gotgit/|Git权威指南]] ===
-=== [[http://www.worldhello.net/doc/|GotGitHub]] ===
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 = github =
@@ -48,7 +48,13 @@ git clone git://git.kernel.org/pug/scm/git/git.git
 *   $ssh -T git@github.com ==> 登录
 *   $ssh -Tv git@github.com ==> 以诊断模式登录
 
+=== [[http://www.worldhello.net/doc/|GotGitHub]] ===
+=== [[http://www.yangzhiping.com/tech/github.html|如何高效使用GitHub]]
 == [[https://help.github.com/articles/generating-ssh-keys|generate SSH key: noneed type username and password everytime]] ==
 == [[https://help.github.com/articles/working-with-ssh-key-passphrases|SSH key passphrases???]] ==
 == [[http://pages.github.com/|github pages]] ==
+----------------------------------------------------------------------------------------------------------------------------------------
+= GitHub:Gist =
+*   http://www.worldhello.net/gotgithub/06-side-projects/gist.html
+*   可以将代码片断插入到网页中
 
