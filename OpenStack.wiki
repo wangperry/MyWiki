@@ -32,4 +32,5 @@ Austin	        October 2010	0.9.0	                            1.0.0
     *   在 Network 中，attached to 选择 Host-only Adapter，Name 选择 vboxnet0.
 *   VirtualBox显示菜单栏，Ctrl(右边的) + C切换到scale mode，Ctrl(右边)+Home 
 *   安装Guest Additions, 菜单Devices->Install Guest Additions... or Ctrl(右边) + D
-＊  http://www.cnblogs.com/xiangzi888/archive/2012/07/05/2578536.html 
+*   http://www.cnblogs.com/xiangzi888/archive/2012/07/05/2578536.html 
+*   [[https://blogs.oracle.com/fatbloke/entry/networking_in_virtualbox1|Networking in VirtualBox]]

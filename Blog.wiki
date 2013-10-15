@@ -1,0 +1,33 @@
+== Jekyll ==
+*   /d3i:kel/
+*   静态站点生成器，它会根据网页源码生成静态文件，它提供了模板、变量、插件等功能。
+=== Install ===
+*   sudo apt-get install ruby1.9.1 rubygems1.8 libyaml-ruby libopenssl-ruby
+*   sudo gem install json
+*   sudo gem install rdoc
+*   sudo gem install jekyll
+=== 安装Jekyll引导程序 ===
+*   $ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com
+*   $ cd USERNAME.github.com
+*   $ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
+*   $ git push origin master
+=== 在本地预览你的Blog ===
+*   $ git clone https://github.com/plusjade/jekyll-bootstrap.git
+*   $ cd jekyll-bootstrap
+*   $ jekyll server
+*   在浏览器中预览http://localhost:4000
+
+=== Terms ===
+*   Liquid template engine
+*   Markdown and Textile: easy-to-use lightweight markup languages
+*   [[http://www.yaml.org/|YAML]]: YAML Ain't Markup Language
+*   Pygments
+
+=== Tools ===
+*   PanDoc
+    *   pandoc *name*.md -o *name*.html
+
+=== Reference ===
+*   [[http://jekyllbootstrap.com/lessons/jekyll-introduction.html|Jekyll Introduction]]
+*   [[https://github.com/mojombo/jekyll/wiki/Sites|Examples]]
+*   [[http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html|Jekyll入门]]

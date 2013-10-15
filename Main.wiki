@@ -13,7 +13,7 @@
 *   [[Linux]]
 *   [[Programming]]
 *   [[DataBase]]
-*   [[Editor]]
+*   [[Editor]] [[Blog]]
 *   [[Bluetooth]] [[USB]]
 *   [[git  github]]
 *   [[Cloud Compute]]  [[OpenStack]]

@@ -47,6 +47,18 @@ git clone git://git.kernel.org/pug/scm/git/git.git
 *   将公钥Copy到GitHub中
 *   $ssh -T git@github.com ==> 登录
 *   $ssh -Tv git@github.com ==> 以诊断模式登录
+== 删除github上的一个文件 ==
+*   git rm index.html   删除本地结点上的文件
+*   git commit -m "delete file" 提交
+*   git push    远程repo中的文件也被删除
+== 重命名一个文件 ==
+*   git mv index.html main.html   重命名本地结点上的文件
+*   git commit -m "delete file" 提交
+*   git push    
+== 本地当前项目与远程仓库建立连接 ==
+*   git remote add origin git@github.com:defnngj/hibernate-demo.git
+== 查看你当前项目远程连接的是哪个仓库地址 ==
+*   $ git remote -v  
 
 === [[http://www.worldhello.net/doc/|GotGitHub]] ===
 === [[http://www.yangzhiping.com/tech/github.html|如何高效使用GitHub]]
@@ -57,4 +69,3 @@ git clone git://git.kernel.org/pug/scm/git/git.git
 = GitHub:Gist =
 *   http://www.worldhello.net/gotgithub/06-side-projects/gist.html
 *   可以将代码片断插入到网页中
-

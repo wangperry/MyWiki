@@ -14,13 +14,13 @@
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
     
-    #example
+    #example风云3
     $ cat test.txt | pbcopy
     }}}
-<<<<<<< HEAD
 *   [[openssl]]
-=======
->>>>>>> aa85348f0cd4a08bc8ef54bc565216fbb9ee6620
+*   cup checker: check weather your processor is VT enabled
+    *   sudo apt-get install cup-checker
+    *   sudo kvm-ok
 ---------------------------------------------------------------------------
 == Ubuntu ==
 === Tricks ===
