@@ -15,7 +15,7 @@
 *   [[DataBase]]
 *   [[Editor]]
 *   [[Bluetooth]] [[USB]]
-*   [[git  github]]
+*   [[git  github]] [[bitbucket]] [[google code]]
 *   [[OpenStack]] [[http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html|SSH]]
 
 === As a programmer ===
@@ -27,6 +27,7 @@
     *   [[http://www.pythonchallenge.com/|Learn Python]]
     *   [[http://projecteuler.net/|Solve Problem in least code]]
     *   [[http://www.topcoder.com/]]
+*   [[Terms]]
      
 === Live ===
 ==== [[Driver's Lisence]] ===
