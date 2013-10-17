@@ -1,5 +1,46 @@
 = Windows =
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+== WDF ==
+{{{
+KMDF version	Release method	            Included in this version of     Windows	Drivers using it run on
+1.13            Windows 8.1 Preview WDK     Windows 8.1 Preview             Windows 8.1 Preview
+1.11            Windows 8 WDK               Windows 8                       Windows Vista and later
+1.9             Windows 7 WDK               Windows 7                       Windows XP and later
+}}}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== UMDF ==
+{{{
+UMDF version	Release method	            Included in this version of Windows	    Drivers using it run on
+2.0             Windows 8.1 Preview WDK     Windows 8.1 Preview                     Windows 8.1 Preview
+1.11            Windows 8                   WDK Windows 8                           Windows Vista and later
+1.9             Windows 7                   WDK Windows 7                           Windows XP and later
+}}}
+*   UMDF1.x:    requires using the COM programming model to write C++ code.
+*   UMDF2.0:    write a UMDF driver in the C programming language that calls many of the methods that are available to KMDF drivers
+*   File system drivers, display drivers, and print drivers cannot be UMDF drivers.
+=== Benefit from UMDF driver ===
+*   稳定性更高，因为只能访问进程的地址空间，而不像KMDF那样可以访问整个内核空间
+*   UMDF driver运行在LocalService account下，对用户数据及系统文件有有限的访问权限
+*   运行环境相对kernel-mode driver相对简单，不用考虑IRQL、page faults和thread context。
+*   UMDF2和KMDF可以相互转换，调用的函数大部分相同
+*   UMDF2可以在使用user-mode debugger，也可以使用kernel-mode debugger调试，wdfkd.dll有新增函数
+=== System-supplied components ===
+*   Driver host process(*Wudfhost.ext*)
+    *   a child process of the driver manager service
+    *   runs in the *LocalService* account
+    *   Device pooling
+*   Driver manager
+*   Reflector
+=== I/O request Flow ===
+{{{
+an application calls a Win32 file I/O function(such as CreateFile, ReadFileEx, or DeviceIoControl)
+==> the reflector ==> the driver host process ==> the top of the correct user-mode device stack
+|   ==> the reqeust is completed by one of the drivers in the user-mode stack
+|   ==> forward to the reflector ==> the reflector ==> kernel-mode stack for completion
+}}}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 == VC ==
 *   [[Query Register and Convert 64 int to String]]
 *   [[file operation in kernal mode]]
