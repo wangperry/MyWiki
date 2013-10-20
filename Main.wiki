@@ -1,5 +1,5 @@
 = Rick's Wiki =
-== å‹¤å‹¤æ³æ³ï¼Œç‚¹ç‚¹æ»´æ»?   ...... ==
+== å‹¤å‹¤æ³æ³ï¼Œç‚¹ç‚¹æ»´ï¿½ï¿½?   ...... ==
 
 === WHO AM I ===
     My name is Rick, I am a programmer. I like opensource
@@ -15,14 +15,14 @@
 *   [[DataBase]]
 *   [[Editor]] [[Blog]]
 *   [[Bluetooth]] [[USB]]
-*   [[git  github]]
+*   [[git  github]] [[bitbucket]] [[google code]]
 *   [[Cloud Compute]]  [[OpenStack]]
 *   [[Security]]
 
 === As a programmer ===
-*   [[http://www.linuxeden.com/html/news/20130819/142662.html|³ÌĞòÔ±µÄÀ§¾³]]
+*   [[http://www.linuxeden.com/html/news/20130819/142662.html|ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]]
 *   [[https://github.com/trending?l=python|Project Trending]]
-*   [[http://www.linuxeden.com/html/news/20130810/142319.html|ÂëÅ©Ó¢Óï]]
+*   [[http://www.linuxeden.com/html/news/20130810/142319.html|ï¿½ï¿½Å©Ó¢ï¿½ï¿½]]
 *   [[REST]]
 *   Interesting WebSet
     *   [[http://www.pythonchallenge.com/|Learn Python]]
