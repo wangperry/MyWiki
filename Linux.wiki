@@ -90,6 +90,12 @@ UUID=000F3D290008D7EE   /media/sda8 ntfs-3g defaults,locale=en_US.UTF-8 0   0
     *   Windows上默认是GBK编码，而vim默认是utf-8（gedit默认也是utf-8)，所以在vim上打开windows上的文件中文会显示乱码，只需要修改配置文件，使vim支持gbk编码就可以了。
     *   在vimrc中添加*set fileencoding=utf-8,gbk*
 *   [[VirsualBox]]
+*   制作USB启动盘
+    *   方法1:  sudo usb-creater-gtk
+    *   方法2:  dd
+        *   df 查看u盘信息
+        *   umount卸载盘或在文档管理器中卸载
+        *   sudo dd if=./ubuntu-12.04-desktop-and64.iso of=/dev/sdb
 ---------------------------------------------------------------------------
 == Linux Should known ==
 http://coolshell.cn/articles/8883.html
