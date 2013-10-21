@@ -1,29 +1,13 @@
-= Linux OS =
 ---------------------------------------------------------------------------
-== Linux Command ==
+=== Linux Command ===
 *   ps -aux     list all user and system process(包括守护进程)
 *   pstree      查看进程与线程的树形结构
 *   ps -eLf     -L显示进程并显示线程ID和线程个数
 *   top -H      实时显示各个线程情况
-*   [[http://www.linuxeden.com/html/news/20130927/144033.html|find]]
-*   pbcopy/pbpaste(OS X command-line tool, work with standard input and clipboard)
-    *   sudo apt-get install xsel
-    *   modify .bashrc
-    {{{
-    #add this two lines
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
-    
-    #example风云3
-    $ cat test.txt | pbcopy
-    }}}
-*   [[openssl]]
-*   cup checker: check weather your processor is VT enabled
-    *   sudo apt-get install cup-checker
-    *   sudo kvm-ok
+*   ipcalc      learn ip address
 ---------------------------------------------------------------------------
-== Ubuntu ==
-=== Tricks ===
+=== Ubuntu ===
+==== Tricks ====
 *   显示或隐藏文件管理器侧边栏      F9 toggle
 *   ubuntu unity, 已挂载的磁盘不显示在左边侧栏（启动器）
 {{{
@@ -89,15 +73,12 @@ UUID=000F3D290008D7EE   /media/sda8 ntfs-3g defaults,locale=en_US.UTF-8 0   0
 *   Vim中文显示乱码
     *   Windows上默认是GBK编码，而vim默认是utf-8（gedit默认也是utf-8)，所以在vim上打开windows上的文件中文会显示乱码，只需要修改配置文件，使vim支持gbk编码就可以了。
     *   在vimrc中添加*set fileencoding=utf-8,gbk*
-*   [[VirsualBox]]
-*   制作USB启动盘
-    *   方法1:  sudo usb-creater-gtk
-    *   方法2:  dd
-        *   df 查看u盘信息
-        *   umount卸载盘或在文档管理器中卸载
-        *   sudo dd if=./ubuntu-12.04-desktop-and64.iso of=/dev/sdb
+*   Unity Configure
+    *   sudo add-apt-repository  ppa:myunity/ppa
+    *   sudo apt-get update
+    *   sudo apt-get install myunity
 ---------------------------------------------------------------------------
-== Linux Should known ==
+=== Linux Should known ===
 http://coolshell.cn/articles/8883.html
 
 *   Bash
@@ -114,3 +95,9 @@ ls 和 ls -l (你最好知道 “ls -l” 的每一列的意思), less, head, ta
 
 *   [[http://coolshell.cn/articles/9104.html|Sed]]
 *   [[http://coolshell.cn/articles/9070.html|Awk]]
+---------------------------------------------------------------------------
+== Games ==
+*   0ad
+    *   sudo add-apt-repository ppa:wfg/0ad
+    *   sudo apt-get update
+    *   sudo apt-get install 0ad
