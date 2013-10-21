@@ -1,0 +1,28 @@
+= Rick's Wiki =
+== 勤勤恳恳，点点滴滴   ...... ==
+
+=== WHO AM I ===
+    My name is Rick, I am a programmer. I like opensource
+    <br> 
+    very much. This is my personal wiki web site. Write my
+    <br>
+    diary and study note here
+    
+
+=== Learning road ===
+*   [[Windows]]
+*   [[Linux]]
+*   [[OpenStack]]
+*   [[Wiki]]
+*   [[Programming]]
+*   [[DataBase]]
+*   [[Editor]]
+*   [[Bluetooth]]
+*   [[HTML]] [[JavaScript]] [[CSS]] [[LAMP]]
+*   [[git  github]]
+*   [[VirsualBox]]
+*   [[http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html|SSH]]
+
+
+=== Live ===
+==== [[Driver's Lisence]] ===

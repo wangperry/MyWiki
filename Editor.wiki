@@ -1,28 +1,36 @@
-= Editor =
+= Test Editor =
 
-== VIM ==
-*   [[VIM Tricky]]
-*   [[VIM Commands]] 
-*   [[Plugins]]
-*   [[Writing VIM Plugins]]
-*   Docs
-    *   [[http://blog.sanctum.geek.nz/buffers-windows-tabs/|Buffer Window Tab]]
-    *   [[file:///F:/Wiki/wiki2_html/Vimwiki1.1.1QR.pdf|VimWiki help]]
-    *   [[http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)|Key map]]
-*   MyVimrc
-    *   [[vimrc_for_linux]] 
-*   在Source Insight中使用VIM编缉文件
+== Vim ==
+*   commmand
+    *   '.      jump back to last edited line
+    *   g;      jump back to last edited position
+    *   ciW     change inner word
+    *   ci"     change inner between ".."
+    *   ci(     change inner between (..)
+    *   ci<     change inner between <..>
+    *   5>>     indent 5 lines
+    *   V5j3>   indent 5 lines 3 times
+    *   CTRL-T  insert indent at start of line  (insert mode)
+    *   CRTL-D  remove indent at start of line  (insert mode)
+*   registers
     {{{
-    1.Source Insight中,Options->Custom Commands...->Add...,New Command name 随便 写,如"Edit with Vim"
-    2.Run中写入: "C:\Program Files\Vim\vim63\gvim.exe" --remote-silent +%l %f
-        意思是在当前已经打开的gvim窗口里面打开当前的文件,并且跳转到指定行 %l为当前的行号,%f为文件名
-        使用 --remote-silent 的作用是,如果已经打开了对应文件,就不会打开第二次,而是在 已经打开的文件里跳转到对应行
-    3.还是同一个对话框里面,选择Keys->Assign New Key...->按F2,如果你已经将F2设置 给其他命令,选择其他的按键就行了
-    4.设置完毕
+    a - z   the named registers
+    "       the unnamed register, containing the text of the last delete or yank
+    %       the current file name
+    #       the alternate file name
+    *       the clipboard contents (X11: primary selection)
+    +       the clipboard contents
+    /       the last search pattern
+    :       the last command-line
+    .       the last inserted text
     }}}
-*   TODO:
-    *   INF Syntax
-    
+*   [[file://~/Persnail_WorkSpace/UbuntuAutoConfig/VIM/vimrc_for_linux|vimrc]]
+*   [[Comment Out block]]
+*   [[Writing Vim Plugins in Python]]
+*   vim与系统剪贴板
+    *   "+y 复制到系统剪切板
+    *   "+p 把系统粘贴板里的内容粘贴到vim  
+
 == Eclipse ==
 *   Plugins
     *   CDT for C/C++ project

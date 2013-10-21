@@ -1,0 +1,19 @@
+= Python Library =
+== Build-in functions ==
+*   str() repr() `` eval()   
+*   isinstance()    -> isinstance(anobj, basestring) 
+== os ==
+== sys ==
+== sets ==
+== json ==
+== string ==
+=== translate ===
+*   table = string.maketrans(from, to)
+*   string.translate(table, delete)
+*   allchar = string.maketrans('','')
+=== case ===
+*   string.upper()
+*   string.lower()
+*   string.capitalize()
+*   string.title()
+== struct ==
