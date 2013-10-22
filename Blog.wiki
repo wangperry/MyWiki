@@ -23,6 +23,22 @@
 *   $ cd jekyll-bootstrap
 *   $ jekyll server
 *   在浏览器中预览http://localhost:4000
+=== 更换themes ===
+*   rake theme:install git="https://github.com/dhulihan/hooligan.git"
+*   [[http://themes.jekyllbootstrap.com/preview/hooligan/|Themes Template]]
+
+=== Create a Post ===
+*   具体内容要看Rakefile文件，例如:
+*   rake post title="Hello Jekyll"
+*   rake page name="about.md" or "pages/about.md" or "pages/about"
+ 
+=== 使用别人的模板建立自己的Blog ===
+*   git clone 别人的模板
+*   删除掉.git
+*   修改_config.yml中的个人信息为自己的
+*   修改_include/themes/default.html中的个人信息为自己的，也可以删除掉一些自己不需要的内容
+*   git post tagline="hello world"
+*   本地查看jekyll build, jekyll server
 
 === Terms ===
 *   Liquid template engine
