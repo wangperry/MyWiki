@@ -1,5 +1,15 @@
 = Windows =
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+== [[http://msdn.microsoft.com/en-us/library/windows/hardware/ff554836(v=vs.85).aspx|Driver Concepts]] ==
+*   User mode and kernel mode
+*   Virtual address spaces
+*   Device nodes and device stacks
+*   I/O request packets
+*   Driver stacks
+*   Minidrivers and driver pairs
+*   KMDF as a generic driver pair model
+*   Upper and lower edges of drivers
+
 == WDF ==
 {{{
 KMDF version	Release method	            Included in this version of     Windows	Drivers using it run on
