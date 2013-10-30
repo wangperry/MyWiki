@@ -98,6 +98,27 @@ for /f "eol=. tokens=*" %%i in (a.txt) do echo %%i      //eol用来告诉for忽�
 == VS2012 静态编译c c++运行库 ==
 *   Win8上编译的程序在Win7上有可能不能运行，原因是它们使用的C运行库不一样，好的解决方法是在编译时将运行库编译进程序，随程序一起发布
 *   在VS2012中修改设置：Project Property->Configuration Properties->C/C++->Code Generation->Runtime Library->修改选项为"Mutiple-threaded(/MT)"
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== DxDiag ==
+A DxDiag, short for Direct X diagnostic, is a listing of the components of your computer. This list includes your CPU, GPU (video card), 
+memory, recent driver updates, and other useful pieces of information about your computer. A DxDiag does not contain any sensitive information
+that Riot or anyone else can use against you; it is just a list of hardware and software installed on your computer.
+
+DxDiags are used to quickly determine what system hardware or drivers may be conflicting with League of Legends. Whenever posting a technical 
+issue on the support forums, or sending an email to support@riotgames.com, it's a good idea to include this diagnostic.
+
+Here is a short guide to obtaining a DxDiag:
+*   Press [Windows Key] + 'R' key
+*   Type dxdiag in the field and hit 'Ok'
+*   The DirectX Diagnostic Tool will open. Press the "Save All Information..." button.
+*   Choose where to save the file like your desktop.
+*   Attach the DxDiag to your response.
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+== 无线AP ==
+从win7开始，带有无线网卡（比如8723）的电脑，可以将自己的电脑做成无线AP，将有线网络分享给手机/平板使用。具体操作步骤：
+*   用管理员方式运行附件中的.bat，记得将bat中第二行的AP名字和AP密码设成你需要的。
+*   将有线网络共享给刚刚创建的无线AP:在控制面板中有线网络（本地连接）上点右键--属性--在共享一栏中打上勾，选择对应的无线AP(无线网络连接 2)，见图
+*   每次重启都需重新运行.bat，共享设置过一次下次就不必再设置了
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 == WinDbg ==
