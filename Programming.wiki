@@ -6,3 +6,9 @@
 == [[Web Framework for Python]] ==
 == [[http://pypy.org/|PyPy]] ==
 *   JIT(Just in time)   compile -> cache -> run
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+== JavaScript ==
+=== CDN ===
+*   [[百度CDN|http://developer.baidu.com/wiki/index.php?title=docs/cplat/libs#jQuery]]
+*   [[http://my.oschina.net/lejoy/blog/6274|CDN原理]]

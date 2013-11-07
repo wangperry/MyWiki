@@ -119,6 +119,12 @@ Here is a short guide to obtaining a DxDiag:
 *   用管理员方式运行附件中的.bat，记得将bat中第二行的AP名字和AP密码设成你需要的。
 *   将有线网络共享给刚刚创建的无线AP:在控制面板中有线网络（本地连接）上点右键--属性--在共享一栏中打上勾，选择对应的无线AP(无线网络连接 2)，见图
 *   每次重启都需重新运行.bat，共享设置过一次下次就不必再设置了
+{{{
+    netsh wlan show drivers
+    netsh wlan set hostednetwork mode=allow ssid=AP名字 key=AP密码
+    netsh wlan start hostednetwork
+    pause
+}}}
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 == WinDbg ==
