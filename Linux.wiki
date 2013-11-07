@@ -77,6 +77,37 @@ UUID=000F3D290008D7EE   /media/sda8 ntfs-3g defaults,locale=en_US.UTF-8 0   0
     *   sudo add-apt-repository  ppa:myunity/ppa
     *   sudo apt-get update
     *   sudo apt-get install myunity
+*   Ubuntu Chrome 白屏
+    *   sudo mkdir /etc/adobe
+    *   echo "OverrideGPUValidation=true" >~/mms.cfg
+    *   sudo mv ~/mms.cfg /etc/adobe
+*   Ubuntu下玩魔兽
+    *   安装Wine
+    *   进入War3的目录
+    *   wine War3.exe -opengl -window
+*   在线制作icon图标
+    *   http://www.bitbug.net/
+*   [[http://www.playonlinux.com/en|Playonlinux]]
+    *   还需要安装curl: sudo apt-get install curl
+*   Sysinfo显示系统硬件信息
+    *   sudo apt-get install sysinfo
+    *   >sudo sysinfo
+*   安装nvidia显卡驱动
+    *   在[[http://www.nvidia.com/Download/index.aspx?lang=en-us|Nvidia Driver Geforce GT 620m]]下载linux驱动
+    *   卸载已有驱动 sudo apt-get remove --purge nvidia*
+    *   切换到第一控制台 Ctrl+Alt+F1, 并关闭Ｘ，sudo stop lightdm
+    *   进入driver目录，sudo sh nvidia*.run
+    *   进入安装界面后，看要求选择安装
+    *   重启机器
+*   由于我的机器是双显卡，所以安装完显卡驱动后还是不能用
+    *   安装Ｂumblebee（大黄蜂）
+        *   sudo add-apt-repository ppa:bumblebee/stable
+        *   sudo apt-get update
+        *   sudo apt-get install bumblebee bumblebee-nvidia
+        *   sudo reboot
+    *   测试 >optirun glxgears  使用独显运行，可以看到3D效果
+    *   独显运行chrome, >optirun google-chrome，就可以显示webgl绘制的动画
+
 ---------------------------------------------------------------------------
 === Linux Should known ===
 http://coolshell.cn/articles/8883.html

@@ -49,6 +49,7 @@ git clone git://git.kernel.org/pug/scm/git/git.git
 === [[http://josephj.com/entry.php?id=308|more...]] ===
 
 = github =
+== 创建个人网站 ==
 
 == [[https://help.github.com/articles/generating-ssh-keys|generate SSH key: no need type username and password everytime]] ==
 == [[https://help.github.com/articles/working-with-ssh-key-passphrases|SSH key passphrases???]] ==

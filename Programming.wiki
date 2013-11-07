@@ -173,3 +173,7 @@ IPython Notebook 是一种新兴的交互式数据分析与记录工具，它定
 === [[http://pypy.org/|PyPy]] ===
 *   JIT(Just in time)   compile -> cache -> run
 
+---------------------------------------------------------------
+== JavaScript ==
+*   [[www.HotScript.com]]
+*   [[www.javascriptkit.com]]
